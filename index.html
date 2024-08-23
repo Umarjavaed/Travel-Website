@@ -1,0 +1,642 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+    <title>EliteVFS</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="author" content="Elitechain">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <meta name="description" content="Web Demo For NowPOSH.">
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const links = document.querySelectorAll("link[rel*='icon']");
+            links.forEach(link => {
+                const img = new Image();
+                img.src = link.href;
+                img.onload = function () {
+                    const canvas = document.createElement('canvas');
+                    const ctx = canvas.getContext('2d');
+                    canvas.width = img.width;
+                    canvas.height = img.height;
+                    ctx.drawImage(img, 0, 0);
+                    const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+                    for (let i = 0; i < imageData.data.length; i += 4) {
+                        // Invert colors
+                        imageData.data[i] = 255 - imageData.data[i];       // Red
+                        imageData.data[i + 1] = 255 - imageData.data[i + 1]; // Green
+                        imageData.data[i + 2] = 255 - imageData.data[i + 2]; // Blue
+                    }
+                    ctx.putImageData(imageData, 0, 0);
+                    link.href = canvas.toDataURL();
+                }
+            });
+        });    
+    </script>
+
+
+    <link rel="shortcut icon" href="EliteVFS.png">
+    <link rel="apple-touch-icon" href="EliteVFS.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="EliteVFS.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="EliteVFS.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link rel="stylesheet" type="text/css" href="revolution/css/settings.css">
+    <link rel="stylesheet" type="text/css" href="revolution/css/layers.css">
+    <link rel="stylesheet" type="text/css" href="revolution/css/navigation.css">
+
+    <link rel="stylesheet" href="css/vendors.min.css" />
+    <link rel="stylesheet" href="css/icon.min.css" />
+    <link rel="stylesheet" href="css/style.min.css" />
+    <link rel="stylesheet" href="css/responsive.min.css" />
+    <link rel="stylesheet" href="demos/product-showcase/product-showcase.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+       
+
+        </head>
+
+<body data-mobile-nav-style="classic">
+
+    <header>
+        <nav class="navbar navbar-expand-lg header-light bg-transparent header-reverse glass-effect" data-header-hover="light">
+            <div class="container-fluid">
+                <div class="col-auto col-lg-2 me-lg-0 me-auto">
+                    <a class="navbar-brand section-link" href="#home">
+                        <!-- Responsive image with adjusted inline CSS -->
+                        <img src="EliteVFS.png" alt="Logo" 
+                             style="width: 20vw; max-width: 180px; height: auto; max-height: 20vh;">
+                    </a>
+                </div>
+                
+                <div class="col-auto col-lg-2 text-end d-none d-sm-flex">
+                    <div class="header-icon">
+                        <div class="header-button">
+                            <a href="https://wa.me/+17862337265" target="_blank" class="btn btn-very-small left-icon btn-rounded btn-box-shadow btn-switch-text btn-dark-gray section-link">
+                                <span>
+                                    <span class="d-none d-xl-inline-block"><i class="bi bi-bag-check fs-16"></i></span>
+                                    <span class="btn-double-text" data-text="Contact">Book Now</span>
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    
+    
+    
+    
+    
+
+    <section id="home" class="p-0 ipad-top-space-margin" style="background-image: url(images/demo-product-showcase-rev-slider-02.jpg);">
+        
+    </section>
+
+    <section id="overview" class="background-position-center-top position-relative" style="background-image: url('images/vertical-line-bg-medium-gray.svg')">
+        <div id="particles-01" data-particle="true" data-particle-options="{&quot;particles&quot;: {&quot;number&quot;: {&quot;value&quot;: 3,&quot;density&quot;: {&quot;enable&quot;: true,&quot;value_area&quot;: 1000}},&quot;color&quot;:{&quot;value&quot;:[&quot;#ff5b74&quot;, &quot;#820f89&quot;]},&quot;shape&quot;: {&quot;type&quot;: &quot;circle&quot;,&quot;stroke&quot;:{&quot;width&quot;:0,&quot;color&quot;:&quot;#000000&quot;}},&quot;opacity&quot;: {&quot;value&quot;: 0.7,&quot;random&quot;: false,&quot;anim&quot;: {&quot;enable&quot;: false,&quot;speed&quot;: 2,&quot;sync&quot;: false}},&quot;size&quot;: {&quot;value&quot;: 7,&quot;random&quot;: true,&quot;anim&quot;: {&quot;enable&quot;: false,&quot;sync&quot;: true}},&quot;move&quot;: {&quot;enable&quot;: true,&quot;speed&quot;:2,&quot;direction&quot;: &quot;right&quot;,&quot;random&quot;: false,&quot;straight&quot;: false}},&quot;interactivity&quot;: {&quot;detect_on&quot;: &quot;canvas&quot;,&quot;events&quot;: {&quot;onhover&quot;: {&quot;enable&quot;: false,&quot;mode&quot;: &quot;repulse&quot;},&quot;onclick&quot;: {&quot;enable&quot;: false,&quot;mode&quot;: &quot;push&quot;},&quot;resize&quot;: true}},&quot;retina_detect&quot;: false}"
+            class="position-absolute top-0px left-0px w-100 z-index-minus-1"></div>
+        <div class="container">
+            <div class="row justify-content-center align-items-center mb-5">
+                <div class="col-12 text-center last-paragraph-no-margin" data-anime="{ &quot;translateY&quot;: [30, 0], &quot;opacity&quot;: [0,1], &quot;duration&quot;: 1200, &quot;delay&quot;: 50, &quot;staggervalue&quot;: 150, &quot;easing&quot;: &quot;easeOutQuad&quot; }">
+                    <div class="text-center bg-golden-yellow text-white fs-16 lh-36 border-radius-30px d-inline-block ps-20px pe-20px align-middle me-10px"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
+                    <span class="text-dark-gray fs-26 d-inline-block align-middle ls-minus-05px">Effortless Visa Appointments with <a href="https://wa.me/+17862337265" target="_blank" class="fw-700 text-decoration-line-bottom text-dark-gray text-dark-gray-hover">EliteVFS</a></span>
+                </div>
+            </div>
+            <div class="row align-items-center mb-6 md-mb-10">
+                <div class="col-md-6 position-relative sm-mb-30px" data-anime="{ &quot;translateX&quot;: [-50, 0], &quot;opacity&quot;: [0,1], &quot;duration&quot;: 1500, &quot;delay&quot;: 100, &quot;staggervalue&quot;: 150, &quot;easing&quot;: &quot;easeOutQuad&quot; }">
+                    <div class="outside-box-left-20 lg-outside-box-left-30">
+                        <img src="visa.png" alt>
+                    </div>
+                </div>
+                <div class="col-md-6 ps-5 md-ps-15px" data-anime="{ &quot;el&quot;: &quot;childs&quot;, &quot;translateX&quot;: [50, 0], &quot;opacity&quot;: [0,1], &quot;duration&quot;: 1000, &quot;delay&quot;: 0, &quot;staggervalue&quot;: 300, &quot;easing&quot;: &quot;easeOutQuad&quot; }">
+                  
+                    <h1 class="fw-800 ls-minus-3px text-dark-gray mb-30px fancy-text-style-4">EliteVFS : Smooth and Fast for 
+                        <span data-fancy-text="{ &quot;effect&quot;: &quot;wave&quot;, &quot;string&quot;: [&quot;Visa Appointments&quot;, &quot;Reliable Booking&quot;, &quot;Efficient Service&quot;], &quot;duration&quot;: 4000  }"></span>
+                    </h1>
+                    <p class="w-90 lg-w-100 mb-35px">EliteVFS transforms your visa appointment experience with smooth and fast service. Our efficient platform ensures a seamless process from start to finish, providing reliable and quick booking. Enjoy hassle-free, streamlined appointments with the utmost convenience and precision.                    </p>
+                    <a href="#features" class="btn btn-large btn-dark-gray btn-hover-animation-switch btn-box-shadow btn-round-edge section-link">
+<span>
+<span class="btn-text">Explore features</span>
+<span class="btn-icon"><i class="feather icon-feather-arrow-right"></i></span>
+<span class="btn-icon"><i class="feather icon-feather-arrow-right"></i></span>
+</span>
+</a>
+                </div>
+            </div>
+            <div class="row row-cols-1 row-cols-lg-3 row-cols-md-2 justify-content-center" data-anime="{ &quot;el&quot;: &quot;childs&quot;, &quot;rotateZ&quot;: [5, 0], &quot;translateY&quot;: [30, 0], &quot;opacity&quot;: [0,1], &quot;duration&quot;: 600, &quot;delay&quot;: 0, &quot;staggervalue&quot;: 200, &quot;easing&quot;: &quot;easeOutQuad&quot; }">
+
+                <div class="col process-step-style-05 position-relative hover-box md-mb-30px">
+                    <div class="process-step-item d-flex align-items-center">
+                        <div class="process-step-icon-wrap position-relative">
+                            <div class="process-step-icon d-flex justify-content-center align-items-center mx-auto rounded-circle h-90px w-90px bg-white fs-22 box-shadow-medium-bottom fw-600 position-relative">
+                                <span class="number position-relative z-index-1 text-dark-gray">01</span>
+                                <div class="box-overlay bg-dark-gray rounded-circle"></div>
+                            </div>
+                        </div>
+                        <div class="process-content ps-25px">
+                            <span class="d-block fw-500 text-dark-gray fs-22 lh-30 ls-minus-05px w-60 xl-w-90">Experience the Ease of <strong>Effortless Booking</strong></span>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col process-step-style-05 position-relative hover-box md-mb-30px">
+                    <div class="process-step-item d-flex align-items-center">
+                        <div class="process-step-icon-wrap position-relative">
+                            <div class="process-step-icon d-flex justify-content-center align-items-center mx-auto rounded-circle h-90px w-90px bg-white fs-22 box-shadow-medium-bottom fw-600 position-relative">
+                                <span class="number position-relative z-index-1 text-dark-gray">02</span>
+                                <div class="box-overlay bg-dark-gray rounded-circle"></div>
+                            </div>
+                        </div>
+                        <div class="process-content ps-25px last-paragraph-no-margin">
+                            <span class="d-block fw-500 text-dark-gray fs-22 lh-30 ls-minus-05px w-60 xl-w-90">Seamless and Reliable <strong>E-Visa Solutions.</strong></span>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col process-step-style-05 position-relative hover-box">
+                    <div class="process-step-item d-flex align-items-center">
+                        <div class="process-step-icon-wrap position-relative">
+                            <div class="process-step-icon d-flex justify-content-center align-items-center mx-auto rounded-circle h-90px w-90px bg-white fs-22 box-shadow-medium-bottom fw-600 position-relative">
+                                <span class="number position-relative z-index-1 text-dark-gray">03</span>
+                                <div class="box-overlay bg-dark-gray rounded-circle"></div>
+                            </div>
+                        </div>
+                        <div class="process-content ps-25px last-paragraph-no-margin">
+                            <span class="d-block fw-500 text-dark-gray fs-22 lh-30 ls-minus-05px w-60 xl-w-90">Swift Processing -  <strong>Streamlined</strong> for Your Convenience</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <section id="features" class="bg-gradient-very-light-gray position-relative pb-2">
+        <div class="background-position-center-top position-absolute top-0 left-0px w-100 h-100" style="background-image: url('images/vertical-line-bg-medium-gray.svg')"></div>
+        <div class="container position-relative">
+            <div class="row justify-content-center mb-2">
+                <div class="col-auto col-xxl-5 col-lg-7 col-sm-9 d-flex align-items-center justify-content-center">
+                    <span class="fs-40 text-gradient-dark-purple-watermelon flex-shrink-0 fw-800 me-40px ls-minus-5px sm-ls-minus-3px" data-bottom-top="transform:scale(1.4, 1.4);" data-top-bottom="transform:scale(1, 1);">Exclusive</span>
+                    <h2 class="text-dark-gray fw-800 ls-minus-3px m-0">Features</h2>
+                </div>
+            </div>
+        </div>
+        
+            <div class="row row-cols-1 row-cols-lg-3 row-cols-sm-2 justify-content-center mb-4" data-anime="{ &quot;el&quot;: &quot;childs&quot;, &quot;translateY&quot;: [50, 0], &quot;opacity&quot;: [0,1], &quot;duration&quot;: 1200, &quot;delay&quot;: 0, &quot;staggervalue&quot;: 150, &quot;easing&quot;: &quot;easeOutQuad&quot; }">
+
+                <div class="col icon-with-text-style-03">
+                    <div class="feature-box p-8">
+                        <div class="feature-box-icon">
+                            <i class="fa-solid fa-phone full icon-double-large text-dark-gray mb-20px"></i>
+                        </div>
+                        <div class="feature-box-content last-paragraph-no-margin">
+                            <span class="d-inline-block fw-700 text-dark-gray mb-5px fs-19 ls-minus-05px">Personalized Support</span>
+                            <p class="w-85 lg-w-100 mx-auto">EliteVFS provides dedicated, one-on-one assistance for all your visa appointment needs, ensuring a tailored and efficient experience.</p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col icon-with-text-style-03">
+                    <div class="feature-box p-8">
+                        <div class="feature-box-icon">
+                            <i class="fa-solid fa-arrows-up-down-left-right  icon-double-large text-dark-gray mb-20px"></i>
+                        </div>
+                        <div class="feature-box-content last-paragraph-no-margin">
+                            <span class="d-inline-block fw-700 text-dark-gray mb-5px fs-19 ls-minus-05px">Expert Guidance</span>
+                            <p class="w-85 lg-w-100 mx-auto">EliteVFS offers expert advice and support, helping you navigate the visa appointment process with ease and confidence.</p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col icon-with-text-style-03">
+                    <div class="feature-box p-8">
+                        <div class="feature-box-icon">
+                            <i class="fa-solid fa-calendar-days icon-double-large text-dark-gray mb-20px"></i>
+                        </div>
+                        <div class="feature-box-content last-paragraph-no-margin">
+                            <span class="d-inline-block fw-700 text-dark-gray mb-5px fs-19 ls-minus-05px">Swift Appointment Scheduling</span>
+                            <p class="w-85 lg-w-100 mx-auto">We handle all the details of your visa appointments swiftly, reducing wait times and ensuring prompt service for all your scheduling needs</p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col icon-with-text-style-03">
+                    <div class="feature-box p-8">
+                        <div class="feature-box-icon">
+                          <i class="fa-solid fa-handshake icon-double-large text-dark-gray mb-20px"></i>
+                        </div>
+                        <div class="feature-box-content last-paragraph-no-margin">
+                            <span class="d-inline-block fw-700 text-dark-gray mb-5px fs-19 ls-minus-05px">Accessible and Responsive Service</span>
+                            <p class="w-85 lg-w-100 mx-auto">EliteVFS is 24/7 available to assist you, offering responsive support to address any questions or issues quickly and effectively.</p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col icon-with-text-style-03">
+                    <div class="feature-box p-8">
+                        <div class="feature-box-icon">
+                            <i class="fa-solid fa-book icon-double-large text-dark-gray mb-20px"></i>
+                        </div>
+                        <div class="feature-box-content last-paragraph-no-margin">
+                            <span class="d-inline-block fw-700 text-dark-gray mb-5px fs-19 ls-minus-05px">Comprehensive Visa Knowledge</span>
+                            <p class="w-85 lg-w-100 mx-auto">Benefit from our extensive knowledge of visa requirements and processes, ensuring accurate and informed assistance for your specific needs.</p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col icon-with-text-style-03">
+                    <div class="feature-box p-8">
+                        <div class="feature-box-icon">
+                            <i class="fa-solid fa-face-smile-beam icon-double-large text-dark-gray mb-20px"></i>
+                        </div>
+                        <div class="feature-box-content last-paragraph-no-margin">
+                            <span class="d-inline-block fw-700 text-dark-gray mb-5px fs-19 ls-minus-05px">Hassle-Free Experience</span>
+                            <p class="w-85 lg-w-100 mx-auto">Leave the complexities to us—EliteVFS takes care of every aspect of your visa appointment, providing a smooth and stress-free service.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="row justify-content-center align-items-center" data-anime="{ &quot;translateY&quot;: [50, 0], &quot;opacity&quot;: [0,1], &quot;duration&quot;: 1200, &quot;delay&quot;: 0, &quot;staggervalue&quot;: 150, &quot;easing&quot;: &quot;easeOutQuad&quot; }">
+                <div class="col-12 text-center">
+                    <div class="d-inline-block align-middle fs-12 ls-05px fw-600 text-white text-uppercase bg-green border-radius-50px ps-20px pe-20px me-10px sm-m-5px">EliteVFS SPECIAL</div>
+                    <div class="d-inline-block align-middle text-dark-gray fw-500 fs-20 ls-minus-05px">A Seamless Booking  <span class="text-decoration-line-bottom fw-700">Experience.</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="technology" class="background-position-center-top position-relative" style="background-image: url('images/vertical-line-bg-medium-gray.svg')">
+        <div id="particles-02" data-particle="true" data-particle-options="{&quot;particles&quot;: {&quot;number&quot;: {&quot;value&quot;: 3,&quot;density&quot;: {&quot;enable&quot;: true,&quot;value_area&quot;: 1000}},&quot;color&quot;:{&quot;value&quot;:[&quot;#ff5b74&quot;, &quot;#820f89&quot;]},&quot;shape&quot;: {&quot;type&quot;: &quot;circle&quot;,&quot;stroke&quot;:{&quot;width&quot;:0,&quot;color&quot;:&quot;#000000&quot;}},&quot;opacity&quot;: {&quot;value&quot;: 0.7,&quot;random&quot;: false,&quot;anim&quot;: {&quot;enable&quot;: false,&quot;speed&quot;: 2,&quot;sync&quot;: false}},&quot;size&quot;: {&quot;value&quot;: 7,&quot;random&quot;: true,&quot;anim&quot;: {&quot;enable&quot;: false,&quot;sync&quot;: true}},&quot;move&quot;: {&quot;enable&quot;: true,&quot;speed&quot;:2,&quot;direction&quot;: &quot;right&quot;,&quot;random&quot;: false,&quot;straight&quot;: false}},&quot;interactivity&quot;: {&quot;detect_on&quot;: &quot;canvas&quot;,&quot;events&quot;: {&quot;onhover&quot;: {&quot;enable&quot;: false,&quot;mode&quot;: &quot;repulse&quot;},&quot;onclick&quot;: {&quot;enable&quot;: false,&quot;mode&quot;: &quot;push&quot;},&quot;resize&quot;: true}},&quot;retina_detect&quot;: false}"
+            class="position-absolute top-0px left-0px w-100 z-index-minus-1"></div>
+        <div class="container overlap-gap-section">
+            <div class="row">
+
+                <div class="col-lg-6 text-center">
+                    <div class="outside-box-left-25 lg-outside-box-left-20 md-outside-box-left-30 position-sticky top-140px">
+                        <img src="plane.png" alt 
+                        data-bottom-top="transform: translateX(0px) translateY(0px);" 
+                        data-top-bottom="transform: translateX(900px) translateY(-400px);">
+
+
+
+                        <span style="margin-left: 270px;" class="fs-350 xxl-fs-300 lg-fs-200 md-fs-275 xs-fs-200 text-gradient-dark-purple-watermelon fw-700 ls-minus-20px position-absolute top-100px d-block z-index-minus-1" data-bottom-top="transform:scale(1, 1) translate3d(0px, 0px, 0px);" data-top-bottom="transform:scale(1, 1) translate3d(-300px, 0px, 0px);">Visa</span>
+                    </div>
+                </div>
+                
+                
+
+                <div class="col-lg-5 offset-lg-1 text-center text-lg-start" data-anime="{ &quot;translateY&quot;: [0, 0], &quot;opacity&quot;: [0,1], &quot;duration&quot;: 1200, &quot;delay&quot;: 50, &quot;staggervalue&quot;: 150, &quot;easing&quot;: &quot;easeOutQuad&quot; }">
+                    <div class="mb-15 mt-25 md-mb-5 md-mt-10">
+                     <i class="fa-solid fa-plane-departure align-middle icon-double-large mb-25px opacity-6"></i>
+                        <span class="fs-90 lg-fs-80 xs-fs-60 fw-800 text-dark-gray ls-minus-4px xs-ls-minus-2px d-block mb-25px">Easy Visa Help</span>
+                        <p class="w-80 xl-w-90 lg-w-100 mb-35px">Experience exceptional service with EliteVFS's personalized support. Our dedicated team guides you through every step of the visa appointment process, ensuring a smooth and efficient experience tailored to your specific needs.
+
+                        </p>
+
+                    </div>
+                    <div class="d-flex"></div>
+                    <div class="mb-15 mt-25 md-mb-5 md-mt-10">
+                        <i class="fa-solid fa-plane-departure align-middle icon-double-large mb-25px opacity-6"></i>
+                        <span class="fs-90 lg-fs-80 xs-fs-60 fw-800 text-dark-gray ls-minus-4px xs-ls-minus-2px d-block mb-25px">Expert Aid Available</span>
+                        <p class="w-80 xl-w-90 lg-w-100 mb-35px">Enjoy peace of mind with our expert assistance. EliteVFS provides knowledgeable support for all your visa appointment inquiries, handling the details with precision and care to ensure timely and accurate results.</p>
+                    </div>
+                    <div class="d-flex"></div>
+                    <div class="mb-15 mt-25 md-mb-5 md-mt-10">
+                        <i class="fa-solid fa-plane-departure align-middle icon-double-large mb-25px opacity-6"></i>
+                        <span class="fs-90 lg-fs-80 xs-fs-60 fw-800 text-dark-gray ls-minus-4px xs-ls-minus-2px d-block mb-25px">Quick Solutions Here</span>
+                        <p class="w-80 xl-w-90 lg-w-100 mb-35px">EliteVFS offers customized solutions to fit your unique requirements. From navigating complex visa procedures to securing appointments effortlessly, our direct support makes the process hassle-free and convenient for you.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="background-position-center-top pt-0" style="background-image: url('images/vertical-line-bg-medium-gray.svg')">
+        <div class="container-fluid">
+            <div class="row position-relative">
+                <div class="col swiper swiper-width-auto text-center pb-20px md-pb-20px feather-shadow" data-slider-options="{ &quot;slidesPerView&quot;: &quot;auto&quot;, &quot;spaceBetween&quot;:70, &quot;speed&quot;: 14000, &quot;loop&quot;: true, &quot;allowTouchMove&quot;: false, &quot;autoplay&quot;: { &quot;delay&quot;:0, &quot;disableOnInteraction&quot;: false }, &quot;keyboard&quot;: { &quot;enabled&quot;: true, &quot;onlyInViewport&quot;: true }, &quot;effect&quot;: &quot;slide&quot; }">
+                    <div class="swiper-wrapper marquee-slide">
+
+                        <div class="swiper-slide">
+                            <div class="fs-90 text-dark-gray fw-700 ls-minus-4px alt-font">Exclusive.</div>
+                        </div>
+
+
+                        <div class="swiper-slide">
+                            <div class="fs-90 text-dark-gray opacity-5 fw-700 ls-minus-4px alt-font">Distinctive.</div>
+                        </div>
+
+
+                        <div class="swiper-slide">
+                            <div class="fs-90 text-dark-gray fw-700 ls-minus-4px alt-font">Modern Efficiency.</div>
+                        </div>
+
+
+                        <div class="swiper-slide">
+                            <div class="fs-90 text-dark-gray opacity-5 fw-700 ls-minus-4px alt-font">All-Day Support
+                            </div>
+                        </div>
+
+
+                        <div class="swiper-slide">
+                            <div class="fs-90 text-dark-gray fw-700 ls-minus-4px alt-font">Expert Guidance.</div>
+                        </div>
+
+
+                        <div class="swiper-slide">
+                            <div class="fs-90 text-dark-gray opacity-5 fw-700 ls-minus-4px alt-font">Compact Service.</div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <section id="review" class="background-position-center-top" style="background-image: url('images/vertical-line-bg-medium-gray.svg')">
+        <div class="container">
+            <div class="row justify-content-center mb-1">
+                <div class="col-xl-7 col-lg-9 col-md-10 text-center" data-anime="{ &quot;el&quot;: &quot;childs&quot;, &quot;translateY&quot;: [50, 0], &quot;opacity&quot;: [0,1], &quot;duration&quot;: 1200, &quot;delay&quot;: 0, &quot;staggervalue&quot;: 150, &quot;easing&quot;: &quot;easeOutQuad&quot; }">
+                    <h2 class="h1 fw-800 text-dark-gray ls-minus-3px">Loved by most valuable customers</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 text-center" data-anime="{ &quot;rotateX&quot;: [-40, 0], &quot;opacity&quot;: [0,1], &quot;duration&quot;: 1200, &quot;delay&quot;: 100, &quot;staggervalue&quot;: 150, &quot;easing&quot;: &quot;easeOutQuad&quot; }">
+                    <div class="swiper swiper-horizontal-3d pt-8 pb-5 lg-pt-10 lg-pb-10 md-pt-12 sm-pt-21 sm-pb-11 swiper-pagination-bottom testimonials-style-04" data-slider-options="{ &quot;loop&quot;: true, &quot;slidesPerView&quot;: 1,&quot;centeredSlides&quot;:true,&quot;effect&quot;:&quot;coverflow&quot;,&quot;coverflowEffect&quot;:{&quot;rotate&quot;:0,&quot;stretch&quot;:100,&quot;depth&quot;:150,&quot;modifier&quot;:1.5,&quot;slideShadows&quot;:true}, &quot;navigation&quot;: { &quot;nextEl&quot;: &quot;.swiper-button-next-nav.slider-navigation-style-04&quot;, &quot;prevEl&quot;: &quot;.swiper-button-previous-nav.slider-navigation-style-04&quot; }, &quot;autoplay&quot;: { &quot;delay&quot;: 5000, &quot;disableOnInteraction&quot;: false }, &quot;pagination&quot;: { &quot;el&quot;: &quot;.swiper-pagination-04&quot;, &quot;clickable&quot;: true, &quot;dynamicBullets&quot;: true }, &quot;breakpoints&quot;: { &quot;768&quot;: { &quot;slidesPerView&quot;: 2 } } }">
+                        <div class="swiper-wrapper">
+
+                            <div class="swiper-slide bg-white border-radius-4px">
+                                <div class="position-relative ps-13 pe-13 md-ps-10 md-pe-10 sm-ps-7 sm-pe-7 pt-20 pb-10 lg-pt-22 md-pt-30 sm-pt-20">
+                                    <img alt src="David Williams.jpg"
+                                        class="absolute-middle-center top-0px rounded-circle w-150px xs-w-100px border border-color-white box-shadow-extra-large border-8">
+                                    <div class="testimonials-content">
+                                        <span class="text-dark-gray fs-18 lh-30 fw-600 mb-5px d-block">Professional and Reliable</span>
+                                        <p class="mb-25px">Booking my visa appointment was a breeze with EliteVFS. Their team is professional and reliable, and they made sure everything was done right the first time.</p>
+                                    </div>
+                                    <div class="testimonials-author fs-19 mb-5px text-gradient-dark-purple-watermelon fw-700 d-inline-block">David Williams</div>
+                                   
+                                </div>
+                            </div>
+
+                            <div class="swiper-slide bg-white border-radius-4px">
+                                <div class="position-relative ps-13 pe-13 md-ps-10 md-pe-10 sm-ps-7 sm-pe-7 pt-20 pb-10 lg-pt-22 md-pt-30 sm-pt-20">
+                                    <img alt src="yusuf_ali.jpeg"
+                                        class="absolute-middle-center top-0px rounded-circle w-150px xs-w-100px border border-color-white box-shadow-extra-large border-8">
+                                    <div class="testimonials-content">
+                                        <span class="text-dark-gray fs-18 lh-30 fw-600 mb-5px d-block">Outstanding Support</span>
+                                        <p class="mb-25px">The support from EliteVFS was outstanding. They were always available to answer my questions and made the whole process simple and straightforward. Great service!</p>
+                                    </div>
+                                    <div class="testimonials-author fs-19 mb-5px text-gradient-dark-purple-watermelon fw-700 d-inline-block">Yusuf Ali</div>
+                                    
+                                </div>
+                            </div>
+
+                            <div class="swiper-slide bg-white border-radius-4px">
+                                <div class="position-relative ps-13 pe-13 md-ps-10 md-pe-10 sm-ps-7 sm-pe-7 pt-20 pb-10 lg-pt-22 md-pt-30 sm-pt-20">
+                                    <img alt src="Ahmed Sheikh.jpeg"
+                                        class="absolute-middle-center top-0px rounded-circle w-150px xs-w-100px border border-color-white box-shadow-extra-large border-8">
+                                    <div class="testimonials-content">
+                                        <span class="text-dark-gray fs-18 lh-30 fw-600 mb-5px d-block">Stress-Free Process</span>
+                                        <p class="mb-25px">EliteVFS made my visa process stress-free. The team guided me through each step, ensuring everything was handled smoothly. I’m definitely recommending them to others!</p>
+                                    </div>
+                                    <div class="testimonials-author fs-19 mb-5px text-gradient-dark-purple-watermelon fw-700 d-inline-block">Ahmed Sheikh</div>
+                                </div>
+                            </div>
+
+                            <div class="swiper-slide bg-white border-radius-4px">
+                                <div class="position-relative ps-13 pe-13 md-ps-10 md-pe-10 sm-ps-7 sm-pe-7 pt-20 pb-10 lg-pt-22 md-pt-30 sm-pt-20">
+                                    <img alt src="Michael Thompson.png"
+                                        class="absolute-middle-center top-0px rounded-circle w-150px xs-w-100px border border-color-white box-shadow-extra-large border-8">
+                                    <div class="testimonials-content">
+                                        <span class="text-dark-gray fs-18 lh-30 fw-600 mb-5px d-block">Quick and Efficient Service</span>
+                                        <p class="mb-25px">I was really impressed with the quick and efficient service from EliteVFS. They took care of everything for my visa appointment, making it a hassle-free experience.</p>
+                                    </div>
+                                    <div class="testimonials-author fs-19 mb-5px text-gradient-dark-purple-watermelon fw-700 d-inline-block">Michael Thompson</div>
+                                
+                                </div>
+                            </div>
+
+
+                        </div>
+
+
+
+
+
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-12 text-center" data-anime="{ &quot;translateY&quot;: [50, 0], &quot;opacity&quot;: [0,1], &quot;duration&quot;: 1200, &quot;delay&quot;: 0, &quot;staggervalue&quot;: 150, &quot;easing&quot;: &quot;easeOutQuad&quot; }">
+                    <div class="text-center bg-dark-gray text-white fs-16 lh-36 border-radius-30px d-inline-block ps-20px pe-20px align-middle me-10px mt-10px mb-10px"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
+                    <h6 class="text-dark-gray fw-400 mb-0 d-inline-block align-middle ls-minus-1px">Some <span class="fw-700">Reviews</span> by our customer </h6>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <section id="pricing" class="bg-gradient-very-light-gray">
+        <div class="container">
+            <div class="row justify-content-center mb-4">
+                <div class="col-xl-7 col-lg-9 text-center" data-anime="{ &quot;el&quot;: &quot;childs&quot;, &quot;translateY&quot;: [50, 0], &quot;opacity&quot;: [0,1], &quot;duration&quot;: 1200, &quot;delay&quot;: 0, &quot;staggervalue&quot;: 150, &quot;easing&quot;: &quot;easeOutQuad&quot; }">
+                    <h2 class="h1 fw-800 text-dark-gray ls-minus-3px">Explore The World Today</h2>
+                </div>
+            </div>
+            <div class="row row-cols-1 row-cols-lg-4 row-cols-sm-2 position-relative justify-content-center" data-anime="{ &quot;el&quot;: &quot;childs&quot;, &quot;rotateZ&quot;: [5, 0], &quot;translateY&quot;: [30, 0], &quot;opacity&quot;: [0,1], &quot;duration&quot;: 600, &quot;delay&quot;: 100, &quot;staggervalue&quot;: 200, &quot;easing&quot;: &quot;easeOutQuad&quot; }">
+               
+                <div class="col text-center md-mb-50px">
+                    <div style="position: relative; display: inline-block;">
+                        <img class="w-70" src="Italy.png" alt style="border-radius: 15px;" />
+                        <div style="position: absolute; top: 90%; left: 50%; transform: translate(-50%, -50%); color: white; font-size: 18px; font-weight: 700; text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);">
+                            <span style="position: relative; display: inline-block; padding: 0 10px; background-color: rgba(0, 0, 0, 0.6); border-radius: 5px;">
+                                Italy
+                            </span>
+                        </div>
+                    </div>
+                    <div class="mt-30px">
+                        <!-- You can remove this if you don't need extra text below the image -->
+                    </div>
+                </div>
+                
+                
+                
+                
+                <div class="col text-center md-mb-50px">
+                    <div style="position: relative; display: inline-block;">
+                        <img class="w-70" src="Germany.png" alt style="border-radius: 15px;" />
+                        <div style="position: absolute; top: 90%; left: 50%; transform: translate(-50%, -50%); color: white; font-size: 18px; font-weight: 700; text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);">
+                            <span style="position: relative; display: inline-block; padding: 0 10px; background-color: rgba(0, 0, 0, 0.6); border-radius: 5px;">
+                                Germany
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col text-center xs-mb-50px">
+                    <div style="position: relative; display: inline-block;">
+                        <img class="w-70" src="Turkey.png" alt style="border-radius: 15px;" />
+                        <div style="position: absolute; top: 90%; left: 50%; transform: translate(-50%, -50%); color: white; font-size: 18px; font-weight: 700; text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);">
+                            <span style="position: relative; display: inline-block; padding: 0 10px; background-color: rgba(0, 0, 0, 0.6); border-radius: 5px;">
+                                Turkey
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col text-center">
+                    <div style="position: relative; display: inline-block;">
+                        <img class="w-70" src="Europe.png" alt style="border-radius: 15px;" />
+                        <div style="position: absolute; top: 90%; left: 50%; transform: translate(-50%, -50%); color: white; font-size: 18px; font-weight: 700; text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);">
+                            <span style="position: relative; display: inline-block; padding: 0 10px; background-color: rgba(0, 0, 0, 0.6); border-radius: 5px;">
+                                Europe
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                
+
+            </div>
+            <div class="row justify-content-center mt-6 sm-mt-11" data-anime="{ &quot;el&quot;: &quot;childs&quot;, &quot;translateY&quot;: [0, 0], &quot;opacity&quot;: [0,1], &quot;duration&quot;: 1200, &quot;delay&quot;: 0, &quot;staggervalue&quot;: 150, &quot;easing&quot;: &quot;easeOutQuad&quot; }">
+                <div class="col-md-4 p-0">
+                    <span class="bg-dark-gray w-100 fs-30 p-7 sm-p-5 fw-700 text-white text-center d-inline-block">Contact Us</span>
+                </div>
+                <div class="col-md-4 p-0">
+                    <a href="https://wa.me/+17862337265" target="_blank" class="btn btn-gradient-purple-pink w-100 fs-30 border-0 p-7 sm-p-5 fw-700 text-uppercase-inherit">To Get E-Visa</a>
+                </div>
+                <div class="col-12 mt-30px">
+
+                    <ul class="list-style-05 text-center text-uppercase ls-1px fs-16 fw-500">
+                        <li>Secure Your Spot Today</li>
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-0">
+        <div class="container">
+            <div class="row pb-50px sm-pb-35px justify-content-center align-items-center">
+                <div class="col-xl-3 col-lg-4 col-sm-6 order-1 text-center text-sm-start xs-mb-20px" style="margin-left: 300px; margin-right:290px ;">
+                    <span class="fs-19 mb-5px d-block">Let's talk with us</span>
+                    <h6 class="fw-700 mb-0 ls-minus-1px"><a href="tel:1800222000" class="text-dark-gray">+1 (786) 233-7265</a></h6>
+                </div>
+                <div class="col-xl-6 col-lg-4 md-mt-25px order-3 order-lg-2 text-center elements-social social-icon-style-04">
+                    <!-- Your content here -->
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    
+    
+    
+    
+    
+    
+    
+
+
+    <footer style="padding-top: 25px; padding-bottom: 25px; border-top: 1px solid #d3d3d3; font-size: 16px; text-align: center;">
+        <div style="margin: 0 auto; max-width: 1200px;">
+            <p style="margin: 0; font-weight: 600; color: #333;">
+                &copy; Developed For <a href="https://vfs.elitechain.com/" target="_blank" style="text-decoration: underline; color: #333; font-weight: 600;">EliteVFS</a>
+            </p>
+        </div>
+    </footer>
+    
+
+
+    <div class="scroll-progress d-none d-xxl-block">
+        <a href="#" class="scroll-top" aria-label="scroll">
+<span class="scroll-text">Scroll</span><span class="scroll-line"><span class="scroll-point"></span></span>
+</a>
+    </div>
+
+
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/vendors.min.js"></script>
+
+    <script type="text/javascript" src="revolution/js/jquery.themepunch.tools.min.js"></script>
+    <script type="text/javascript" src="revolution/js/jquery.themepunch.revolution.min.js"></script>
+
+
+
+    <script type="text/javascript">
+        /* https://learn.jquery.com/using-jquery-core/document-ready/ */
+        jQuery(document).ready(function() {
+
+            /* initialize the slider based on the Slider's ID attribute from the wrapper above */
+            jQuery('#rev_slider_31_1').show().revolution({
+
+                /* options are 'auto', 'fullwidth' or 'fullscreen' */
+                sliderLayout: 'fullwidth',
+                /* sets the Slider's default timeline */
+                delay: 9000,
+                /* options that disable autoplay */
+                stopLoop: "off",
+                stopAfterLoops: 0,
+                stopAtSlide: 1,
+                /* Lazy Load options are "all", "smart", "single" and "none" */
+                lazyType: "smart",
+                spinner: "spinner0",
+                responsiveLevels: [1240, 1024, 778, 480],
+                /* [DESKTOP, LAPTOP, TABLET, SMARTPHONE] */
+                gridwidth: [1190, 1024, 778, 480],
+                /* [DESKTOP, LAPTOP, TABLET, SMARTPHONE] */
+                gridheight: [1250, 920, 1000, 650],
+                /* Lazy Load options are "all", "smart", "single" and "none" */
+                lazyType: "none",
+                parallax: {
+                    type: "mouse+scroll",
+                    origo: "slidercenter",
+                    speed: 400,
+                    speedbg: 1500,
+                    speedls: 1000,
+                    levels: [5, 10, 15, 20, 25, 30, 35, 40, 60, 46, -10, -15, -20, -25, -30, 55],
+                },
+            });
+        });
+    </script>
+    <script type="text/javascript" src="js/main.js"></script>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DND93RJKBT"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'G-DND93RJKBT');
+    </script>
+    
+</body>
+
+</html>
